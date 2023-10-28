@@ -28,12 +28,11 @@ import { JsonPipe, NgFor, NgIf } from '@angular/common';
 })
 export class FileBrowserComponent {
     filename: string = '';
-    // pathname: string = 'xml/wms';
     pathname: string = '';
 
     filterText: string = '';
     fileContent: string = '';
-    editorOptions = { theme: 'vs-dark', language: 'ts' };
+    editorOptions = { theme: 'vs-dark', language: 'typescript' };
 
     folderEntries: FolderEntry[] = [];
 
