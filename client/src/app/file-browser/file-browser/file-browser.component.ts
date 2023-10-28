@@ -8,6 +8,7 @@ import { FolderEntriesComponent } from '../folder-entries/folder-entries.compone
 // import {SearchInputComponent} from '../../search-input/search-input.component';
 import { MatButtonModule } from '@angular/material/button';
 import { JsonPipe, NgFor, NgIf } from '@angular/common';
+import { FileEditorComponent } from 'src/app/file-editor/file-editor.component';
 
 @Component({
     selector: 'app-file-browser',
@@ -19,11 +20,12 @@ import { JsonPipe, NgFor, NgIf } from '@angular/common';
         NgIf,
         JsonPipe,
         MatButtonModule,
-        // SearchInputComponent,
-        FolderEntriesComponent,
         MatToolbarModule,
         MonacoEditorModule,
-        FormsModule
+        FormsModule,
+        // SearchInputComponent,
+        FolderEntriesComponent,
+        FileEditorComponent
     ]
 })
 export class FileBrowserComponent {

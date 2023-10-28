@@ -19,11 +19,9 @@
     </div>
     
     <div class="files" *ngIf="!!fileContent">
-        <mat-toolbar>
-            <span>{{ filename }}</span>
-        </mat-toolbar>
         <div style="height: 93vh">
-            <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="fileContent"></ngx-monaco-editor>
+            <!-- <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="fileContent"></ngx-monaco-editor> -->
+            <app-file-editor [filename]="filename" [fileContent]="fileContent"></app-file-editor>
         </div>
     </div>
 </div>

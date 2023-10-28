@@ -6,8 +6,6 @@
     <button (click)="saveFile()" mat-button>save</button>
 </mat-toolbar>
 
-<div style="height: 400px; width: 500px;">
-    <div style="height: 100%">
-        <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="fileContent"></ngx-monaco-editor>
-    </div>
+<div style="height: 95%; width: 1550px;">
+    <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="fileContent"></ngx-monaco-editor>
 </div>

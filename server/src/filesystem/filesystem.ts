@@ -6,6 +6,10 @@ export function readFile(filename: string): Promise<string> {
     return fs.promises.readFile(filename, 'utf-8');
 }
 
+export function writeFile(filename: string, contents: string): Promise<any> {
+    return fs.promises.writeFile(filename, contents, 'utf-8');
+}
+
 function createFolderEntry(filename: string, isFolder: boolean): FolderEntry {
     return {
         filename,
@@ -24,6 +28,10 @@ export class FileSystem {
 
     readFile(filename: string): Promise<string> {
         return readFile(path.join(this.rootpath, filename));
+    }
+
+    writeFile(filename: string, contents: string): Promise<string> {
+        return writeFile(path.join(this.rootpath, filename), contents);
     }
 
     readFolder(foldername: string): Promise<FolderEntry[]> {

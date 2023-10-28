@@ -42,5 +42,10 @@ export class FileEditorComponent {
     }
 
     saveFile() {
+        this.backendService
+            .saveFile(this.filename, this.fileContent)
+            .subscribe({
+                next: (data) => { ; }
+            });
     }
 }
