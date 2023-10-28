@@ -18,6 +18,7 @@ async function createFolderEntries(foldername: string): Promise<FolderEntry[]> {
     const stats = await Promise.all(names.map(e => fs.promises.stat(path.join(foldername, e))));
     return names.map((name, i) => createFolderEntry(name, stats[i].isDirectory()));
 }
+
 export class FileSystem {
     constructor(public readonly rootpath: string) {}
 
