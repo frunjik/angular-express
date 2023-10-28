@@ -33,7 +33,7 @@ export class FileBrowserComponent {
 
     filterText: string = '';
     fileContent: string = '';
-    editorOptions = { theme: 'vs-dark', language: 'xml' };
+    editorOptions = { theme: 'vs-dark', language: 'ts' };
 
     folderEntries: FolderEntry[] = [];
 
@@ -75,14 +75,14 @@ export class FileBrowserComponent {
     private showFile(filename: string) {
         this.filename = filename;
         this.backend
-            .getFiles(filename)
+            .loadFile(filename)
             .subscribe((fileContent) => (this.fileContent = fileContent));
     }
 
     private showFolder(pathname: string) {
         this.pathname = pathname;
         this.backend
-            .getFolders(pathname)
+            .loadFolder(pathname)
             .subscribe((folderEntries) => (this.folderEntries = folderEntries));
     }
 }

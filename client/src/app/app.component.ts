@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FileBrowserComponent } from './file-browser/file-browser/file-browser.component';
 import { RouterOutlet } from '@angular/router';
+import { FileEditorComponent } from './file-editor/file-editor.component';
 
 @Component({
     selector: 'app-root',
@@ -9,7 +10,8 @@ import { RouterOutlet } from '@angular/router';
     standalone: true,
     imports: [
         RouterOutlet,
-        FileBrowserComponent
+        FileEditorComponent,
+        FileBrowserComponent,
     ]
 })
 export class AppComponent {

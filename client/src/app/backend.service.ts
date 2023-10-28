@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
+import { SuccessResponseBody, FolderEntry } from '@shared';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -13,35 +15,34 @@ export class BackendService {
 
     constructor(private httpservice: HttpClient) { }
 
-    get(resource: string): Observable<any> {
-        return this.httpservice.get<any>(this.server + resource)
+    get<T>(resource: string): Observable<T> {
+        return this.httpservice.get<SuccessResponseBody<T>>(this.server + resource)
             .pipe(
                 map(data => data.data),
             );
     }
 
-    getFiles(pathname: string): Observable<any> {
-        return this.get(`files?path=${pathname}`)
+    loadFile(pathname: string): Observable<string> {
+        return this.get<string>(`files?path=${pathname}`)
             .pipe(
                 catchError(err => {
-                    this.logError(`getFiles`, err);
+                    this.logError(`loadFile("${pathname}")`, err);
                     return of('');
                 })
             );
     }
 
-    getFolders(pathname: string): Observable<any[]> {
-        return this.get(`folders?path=${pathname}`)
+    loadFolder(pathname: string): Observable<FolderEntry[]> {
+        return this.get<FolderEntry[]>(`folders?path=${pathname}`)
             .pipe(
                 catchError(err => {
-                    this.logError(`getFolders`, err);
+                    this.logError(`loadFolder("${pathname}")`, err);
                     return of([]);
                 })
             );
     }
 
     logError(message: string, e: Error) {
-        console.error(message, e);
+        console.error(`ERROR BackendService.${message}`, e);
     }
-
 }
