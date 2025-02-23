@@ -1,8 +1,8 @@
 import express, { Express, Request, RequestHandler, Response } from 'express';
 import cors from 'cors';
-import { FileSystem } from './filesystem/filesystem';
-import { getFiles, postFiles } from './handlers/files';
-import { getFolders } from './handlers/folders';
+import { FileSystem } from './filesystem/filesystem.js';
+import { getFiles, postFiles } from './handlers/files.js';
+import { getFolders } from './handlers/folders.js';
 
 const root = 'C:/Users/Jeroen/Projects';
 const port = 3000;
