@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FileBrowserComponent } from './file-browser/file-browser/file-browser.component';
 import { RouterOutlet } from '@angular/router';
-import { FileEditorComponent } from './file-editor/file-editor.component';
+import { MatButtonModule } from '@angular/material/button';
+// import { FileEditorComponent } from './file-editor/file-editor.component';
 
 @Component({
     selector: 'app-root',
@@ -10,8 +11,9 @@ import { FileEditorComponent } from './file-editor/file-editor.component';
     standalone: true,
     imports: [
         RouterOutlet,
-        FileEditorComponent,
+        // FileEditorComponent,
         FileBrowserComponent,
+        MatButtonModule
     ]
 })
 export class AppComponent {

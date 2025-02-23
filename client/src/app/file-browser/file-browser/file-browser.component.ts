@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FolderEntriesComponent } from '../folder-entries/folder-entries.component';
 // import {SearchInputComponent} from '../../search-input/search-input.component';
 import { MatButtonModule } from '@angular/material/button';
-import { JsonPipe, NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { FileEditorComponent } from 'src/app/file-editor/file-editor.component';
 
 @Component({
@@ -18,7 +18,6 @@ import { FileEditorComponent } from 'src/app/file-editor/file-editor.component';
     imports: [
         NgFor,
         NgIf,
-        JsonPipe,
         MatButtonModule,
         MatToolbarModule,
         MonacoEditorModule,
